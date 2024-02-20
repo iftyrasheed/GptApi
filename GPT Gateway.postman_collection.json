@@ -1,0 +1,122 @@
+{
+	"info": {
+		"_postman_id": "6504a98f-75fe-437f-8a6b-ea3a3b546260",
+		"name": "GPT Gateway",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26091141"
+	},
+	"item": [
+		{
+			"name": "UserID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbWludXIuaWZ0eUB2ZW50dXJhcy1iZC5jb20iLCJpZCI6IjljZTEwNTE1LWU3ZjMtNDg0MS1hZTQ3LWRhYTlhODllMTFkYyIsImlhdCI6MTY5NzcxMzg5MiwiZXhwIjoxNjk3NzE3NDkyfQ.g4sg4RWtPTLSiY8db2-8nrK2piAWDBMfU8zi1N1PCPetXP5VBnGxYWngoYV8ktVA7BAGEohO0YenFsiO40eVQg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseurl}}/api/admin-user/9ce10515-e7f3-4841-ae47-daa9a89e11dc",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"api",
+						"admin-user",
+						"9ce10515-e7f3-4841-ae47-daa9a89e11dc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UserReg",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"aminur.ifty@venturas-bd.com\",\r\n  \"name\": \"Aminur Rashid Ifty\",\r\n  \"password\": \"Password12345\",\r\n  \"status\": true,\r\n  \"role\": [\r\n    \"t_s_admin\"\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseurl}}/api/auth/register",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "loginPost",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"tenantId\": \"string\",\r\n  \"email\": \"aminur.ifty@venturas-bd.com\",\r\n  \"password\": \"Password12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseurl}}/api/auth/login",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseurl",
+			"value": "https://chatgptgw-admin-app-hl5c7iva4a-an.a.run.app/",
+			"type": "string"
+		}
+	]
+}
